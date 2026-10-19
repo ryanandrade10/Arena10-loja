@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <title>Arena 10 | Cadastro</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="auth-body">
+    <div class="auth-toast" id="authToast" role="alert">
+      <span id="authToastIcon">i</span>
+      <div>
+        <strong id="authToastTitle">Aviso</strong
+        ><small id="authToastText"></small>
+      </div>
+      <button type="button" id="authToastClose">×</button>
+    </div>
+    <main class="auth-layout">
+      <div class="auth-visual">
+        <div class="auth-brand">
+          <span class="logo-mark">A10</span><span>ARENA 10</span>
+        </div>
+        <div class="auth-copy">
+          <span class="eyebrow">VIVA O JOGO</span>
+          <h1>Seu futebol começa aqui.</h1>
+          <p>Chuteiras, camisas e equipamentos para quem joga com paixão.</p>
+          <div class="auth-benefits">
+            <span>✓ Frete grátis acima de R$ 299</span
+            ><span>✓ Troca fácil em até 30 dias</span
+            ><span>✓ Compra 100% segura</span>
+          </div>
+        </div>
+      </div>
+      <section class="auth-panel">
+        <div class="auth-box">
+          <a class="back-btn" href="login.html">← Voltar ao login</a
+          ><span class="eyebrow dark">NOVA CONTA</span>
+          <h2>Crie seu cadastro</h2>
+          <p class="muted">Rapido e fácil.</p>
+          <form id="registerForm" novalidate>
+            <div class="two-columns">
+              <div>
+                <label for="regName">Nome completo</label
+                ><input id="regName" placeholder="Nome e sobrenome" />
+              </div>
+              <div>
+                <label for="regCpf">CPF </label
+                ><input
+                  id="regCpf"
+                  maxlength="14"
+                  placeholder="000.000.000-00"
+                />
+              </div>
+            </div>
+            <label for="regEmail">E-mail</label
+            ><input
+              id="regEmail"
+              type="email"
+              placeholder="seuemail@exemplo.com"
+            />
+            <div class="two-columns">
+              <div>
+                <label for="regPhone">Celular</label
+                ><input
+                  id="regPhone"
+                  maxlength="15"
+                  placeholder="(00) 00000-0000"
+                />
+              </div>
+              <div>
+                <label for="regBirth">Nascimento</label
+                ><input id="regBirth" type="date" />
+              </div>
+            </div>
+            <div class="two-columns">
+              <div>
+                <label for="regPassword">Senha</label
+                ><input
+                  id="regPassword"
+                  type="password"
+                  placeholder="Arena@2026"
+                />
+              </div>
+              <div>
+                <label for="regConfirm">Confirmar senha</label
+                ><input
+                  id="regConfirm"
+                  type="password"
+                  placeholder="Repita a senha"
+                />
+              </div>
+            </div>
+            <div class="password-rules visible" id="passwordRules">
+              <span data-rule="length">- Mínimo de 8 caracteres</span
+              >
+              <br>
+              <span data-rule="upper">○ Uma maiúscula</span
+              >
+              <br>
+              <span data-rule="lower">○ Uma minúscula</span
+              >
+              <br>
+              <span data-rule="number">○ Um número</span
+              >
+              <br>
+              <span data-rule="special">○ Um especial ex: @,#,$,! .</span>
+            </div>
+            <label class="check"
+              ><input id="offers" type="checkbox" /><span
+                >Quero receber ofertas por e-mail.</span
+              ></label
+            ><label class="check"
+              ><input id="whatsapp" type="checkbox" /><span
+                >Quero receber novidades pelo WhatsApp.</span
+              ></label
+            ><label class="check"
+              ><input id="privacy" type="checkbox" /><span
+                >Concordo com a Política de Privacidade.</span
+              ></label
+            ><button class="primary-btn" type="submit">Criar conta →</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <script src="auth.js"></script>
+  </body>
+</html>

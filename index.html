@@ -1,0 +1,810 @@
+<!doctype html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+      content="Arena 10 - loja esportiva demonstrativa"
+      name="description"
+    />
+    <title>Arena 10 | Loja de Futebol</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="toast" id="toast" role="status"></div>
+    <div class="store-page" id="storePage">
+      <div class="top-strip">
+        <span>Frete grátis acima de R$ 299</span><span>10% OFF no PIX</span
+        ><span>Troca fácil em 30 dias</span>
+      </div>
+      <header class="site-header">
+        <button
+          aria-label="Abrir menu"
+          class="mobile-menu-btn"
+          id="mobileMenuBtn"
+        >
+          ☰
+        </button>
+        <a aria-label="Página inicial" class="brand" href="#"
+          ><span class="logo-mark">A10</span><span>ARENA 10</span></a
+        >
+        <form class="search" id="searchForm">
+          <input
+            id="searchInput"
+            placeholder="O que você está procurando?"
+            type="search"
+          /><button aria-label="Buscar">⌕</button>
+        </form>
+        <div class="header-actions">
+          <button class="header-btn" id="accountBtn">
+            <span>♙</span><small>Olá, atleta</small><b>Minha conta</b>
+          </button>
+          <button class="header-btn cart-button" id="openCart">
+            <span>🛒</span><small>Meu carrinho</small
+            ><b id="cartSummary">R$ 0,00</b><em id="cartCount">0</em>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-content">
+            <span class="eyebrow">COLEÇÃO VELOCIDADE</span>
+            <h1>Mais rápido.<br /><i>Mais decisivo.</i></h1>
+            <p>
+              Chuteiras criadas para transformar cada arrancada em vantagem.
+            </p>
+            <button class="light-btn" data-scroll-products="">
+              Comprar chuteiras →
+            </button>
+          </div>
+          <div class="hero-art">
+            <div class="ball">⚽</div>
+            <div class="speed-line l1"></div>
+            <div class="speed-line l2"></div>
+            <div class="speed-line l3"></div>
+            <strong>90'</strong>
+          </div>
+        </section>
+        <section class="trust-row">
+          <div><b>🚚 Envio rápido</b><span>Para todo o Brasil</span></div>
+          <div><b>↺ Troca fácil</b><span>Até 30 dias</span></div>
+          <div><b>🔒 Compra segura</b><span>Ambiente protegido</span></div>
+          <div>
+            <b>💳 Até 10x sem juros</b><span>Parcela mínima de R$ 20</span>
+          </div>
+        </section>
+        <nav class="category-nav" id="categoryNav">
+          <button class="active" data-category="Todos">Todos</button
+          ><button data-category="Chuteiras">Chuteiras</button
+          ><button data-category="Camisas">Camisas</button
+          ><button data-category="Bolas">Bolas</button
+          ><button data-category="Treino">Treino</button
+          ><button data-category="Acessórios">Acessórios</button>
+          <button class="sale-link" data-category="Ofertas">Ofertas</button>
+        </nav>
+        <section class="shop-section" id="productsSection">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow dark">SELEÇÃO ARENA 10</span>
+              <h2>Produtos em destaque</h2>
+            </div>
+            <button class="filter-mobile" id="filterMobile">Filtros ⚙</button
+            ><span id="resultCount"></span>
+          </div>
+          <div class="shop-layout">
+            <aside class="filters" id="filters">
+              <div class="filter-title">
+                <h3>Filtrar por</h3>
+                <button id="clearFilters">Limpar</button>
+              </div>
+              <label>Categoria</label
+              ><select id="categoryFilter">
+                <option>Todos</option>
+                <option>Chuteiras</option>
+                <option>Camisas</option>
+                <option>Bolas</option>
+                <option>Treino</option>
+                <option>Acessórios</option></select
+              ><label>Tamanho / numeração</label
+              ><select id="sizeFilter">
+                <option value="Todos">Todos os tamanhos</option>
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+                <option value="44">44</option>
+                <option value="45">45</option>
+                <option value="P">P</option>
+                <option value="M">M</option>
+                <option value="G">G</option>
+                <option value="XG">XG</option>
+                <option value="G1">G1</option></select
+              ><label>Cor</label
+              ><select id="colorFilter">
+                <option value="Todas">Todas as cores</option>
+                <option value="Verde">Verde</option>
+                <option value="Salmão">Salmão</option>
+                <option value="Bordo">Bordo</option>
+                <option value="Aqua">Aqua</option>
+                <option value="Laranja">Laranja</option>
+                <option value="Amarelo">Amarelo</option>
+                <option value="Vermelha">Vermelha</option>
+              </select>
+              <label>Preço máximo: <b id="priceLabel">R$ 600</b></label
+              ><input
+                id="priceFilter"
+                max="600"
+                min="50"
+                step="10"
+                type="range"
+                value="600"
+              />
+              <label>Ordenar</label
+              ><select id="sortFilter">
+                <option value="featured">Mais relevantes</option>
+                <option value="low">Menor preço</option>
+                <option value="high">Maior preço</option>
+                <option value="rating">Melhor avaliação</option>
+              </select>
+              <label class="check"
+                ><input id="saleFilter" type="checkbox" /><span
+                  >Somente ofertas</span
+                ></label
+              >
+            </aside>
+            <div class="products-grid" id="productsGrid"></div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <div class="brand">
+          <span class="logo-mark">A10</span><span>ARENA 10</span>
+        </div>
+        <p>
+          Copyright ©2026 - 2026 www.Arena10.com.br, TODOS OS DIREITOS
+          RESERVADOS. Todo o conteúdo do site, todas as fotos, imagens,
+          logotipos, marcas, dizeres, som, software, conjunto imagem, layout,
+          trade dress, aqui veiculados são de propriedade exclusiva da A10.COM
+          Internet S.A. ou de seus parceiros. É vedada qualquer reprodução,
+          total ou parcial, de qualquer elemento de identidade, sem expressa
+          autorização. A violação de qualquer direito mencionado implicará na
+          responsabilização cível e criminal nos termos da Lei. NS2.Com Internet
+          S/A - CNPJ: 09.339.936/0001-16 - R MARIA PRESTES MAIA nº 300 - 2º
+          Andar CEP: 02047-901 - CARANDIRU - SAO PAULO - SP - A inclusão no
+          carrinho não garante o preço e/ou a disponibilidade do produto. Caso
+          os produtos apresentem divergências de valores, o preço válido é o
+          exibido na tela de pagamento. Vendas sujeitas a análise e
+          disponibilidade de estoque.
+        </p>
+        <p>© 2026 Arena 10</p>
+      </footer>
+    </div>
+    <div class="product-detail-page hidden" id="productDetailPage">
+      <header class="detail-header">
+        <button id="closeProductDetail" type="button">
+          ← Voltar aos produtos
+        </button>
+        <div class="brand">
+          <span class="logo-mark">A10</span><span>DETALHES DO PRODUTO</span>
+        </div>
+        <button id="detailCartButton" type="button">
+          🛒 <span id="detailCartCount">0</span>
+        </button>
+      </header>
+      <main class="detail-shell">
+        <section class="detail-gallery">
+          <div class="detail-main-image">
+            <img alt="Imagem do produto" id="detailImage" />
+          </div>
+          <small>Fotos tiradas de estoque real.</small>
+        </section>
+        <section class="detail-buy">
+          <span class="product-category" id="detailCategory"></span>
+          <h1 id="detailName"></h1>
+          <div class="detail-rating" id="detailRating"></div>
+          <p class="detail-description" id="detailDescription"></p>
+          <span class="old-price" id="detailOldPrice"></span>
+          <div class="detail-price" id="detailPrice"></div>
+          <span class="installments" id="detailInstallments"></span>
+          <div class="detail-option-group hidden" id="colorSelector">
+            <div class="detail-option-heading">
+              <b>Escolha a cor</b><span id="selectedColor"></span>
+            </div>
+            <div class="color-options" id="colorOptions"></div>
+          </div>
+          <div class="detail-option-group hidden" id="sizeSelector">
+            <div class="detail-option-heading">
+              <b id="sizeTitle">Escolha o tamanho</b
+              ><span id="selectedStock"></span>
+            </div>
+            <div class="size-options" id="sizeOptions"></div>
+          </div>
+          <div class="detail-alert hidden" id="detailAlert"></div>
+          <button class="primary-btn detail-add" id="detailAddCart">
+            Adicionar ao carrinho
+          </button>
+        </section>
+        <section class="product-information">
+          <div class="info-tabs">
+            <button class="active" data-info-tab="specifications">
+              Especificações</button
+            ><button data-info-tab="features">Características</button
+            ><button data-info-tab="reviews">Avaliações</button>
+          </div>
+          <div class="info-panel" data-info-panel="specifications">
+            <dl id="specificationsList"></dl>
+          </div>
+          <div class="info-panel hidden" data-info-panel="features">
+            <ul id="featuresList"></ul>
+          </div>
+          <div class="info-panel hidden" data-info-panel="reviews">
+            <div class="review-summary">
+              <strong id="reviewAverage"></strong><span>★★★★★</span
+              ><small id="reviewCount"></small>
+            </div>
+            <div id="reviewsList"></div>
+            <form id="reviewForm">
+              <h3>Avalie este produto</h3>
+              <div class="review-stars" id="reviewStars">
+                <button data-stars="1" type="button">★</button
+                ><button data-stars="2" type="button">★</button
+                ><button data-stars="3" type="button">★</button
+                ><button data-stars="4" type="button">★</button
+                ><button data-stars="5" type="button">★</button>
+              </div>
+              <input id="reviewName" placeholder="Seu nome" /><textarea
+                id="reviewText"
+                placeholder="Conte sua experiência com o produto"
+              ></textarea
+              ><button class="secondary-btn" type="submit">
+                Enviar avaliação simulada
+              </button>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div class="account-page hidden" id="accountPage">
+      <header class="account-header">
+        <button id="closeAccount">← Voltar à loja</button>
+        <div class="brand">
+          <span class="logo-mark">A10</span><span>MINHA CONTA</span>
+        </div>
+        <span>Área demonstrativa</span>
+      </header>
+      <div class="account-shell">
+        <aside class="account-menu">
+          <div class="profile-avatar" id="profileInitials">AT</div>
+          <h3 id="profileSideName">Atleta Arena</h3>
+          <small id="profileSideEmail">atleta@exemplo.com</small>
+          <nav>
+            <button class="active" data-account-tab="profile">
+              ♙ Meu perfil</button
+            ><button data-account-tab="addresses">⌂ Meus endereços</button
+            ><button data-account-tab="orders">▤ Meus pedidos</button
+            ><button data-account-tab="preferences">♡ Preferências</button>
+          </nav>
+          <button class="logout-btn" id="logoutBtn">Sair da conta</button>
+        </aside>
+        <main class="account-content">
+          <section class="account-tab" data-account-panel="profile">
+            <span class="eyebrow dark">DADOS PESSOAIS</span>
+            <h1>Meu perfil</h1>
+            <p class="muted">
+              Altere os dados nesta sessão.
+            </p>
+            <div class="checkout-form">
+              <div class="field full">
+                <label>Nome completo</label
+                ><input id="profileName" value="Atleta Arena" />
+              </div>
+              <div class="field">
+                <label>CPF </label
+                ><input
+                  id="profileCpf"
+                  maxlength="14"
+                  placeholder="000.000.000-00"
+                />
+              </div>
+              <div class="field">
+                <label>Data de nascimento</label
+                ><input id="profileBirth" type="date" />
+              </div>
+              <div class="field">
+                <label>E-mail</label
+                ><input
+                  id="profileEmail"
+                  type="email"
+                  value="atleta@exemplo.com"
+                />
+              </div>
+              <div class="field">
+                <label>Celular</label
+                ><input
+                  id="profilePhone"
+                  maxlength="15"
+                  placeholder="(00) 00000-0000"
+                />
+              </div>
+            </div>
+            <button class="primary-btn account-save" id="saveProfile">
+              Salvar alterações
+            </button>
+          </section>
+          <section class="account-tab hidden" data-account-panel="addresses">
+            <span class="eyebrow dark">ENTREGAS</span>
+            <h1>Meus endereços</h1>
+            <div class="address-card">
+              <div>
+                <b>Endereço principal</b
+                ><span id="savedAddress"
+                  >Nenhum endereço cadastrado nesta sessão.</span
+                >
+              </div>
+              <button id="useCheckoutAddress">Usar dados do checkout</button>
+            </div>
+            <button class="secondary-btn" id="newAddressBtn">
+              + Adicionar endereço 
+            </button>
+          </section>
+          <section class="account-tab hidden" data-account-panel="orders">
+            <span class="eyebrow dark">HISTÓRICO</span>
+            <h1>Meus pedidos</h1>
+            <div class="orders-list" id="ordersList">
+              <div class="empty-account">
+                Nenhum pedido foi concluído ainda.
+              </div>
+            </div>
+          </section>
+          <section class="account-tab hidden" data-account-panel="preferences">
+            <span class="eyebrow dark">COMUNICAÇÃO</span>
+            <h1>Preferências</h1>
+            <label class="check"
+              ><input checked="" id="prefEmail" type="checkbox" /><span
+                >Receber ofertas por e-mail</span
+              ></label
+            ><label class="check"
+              ><input id="prefWhatsapp" type="checkbox" /><span
+                >Receber novidades por WhatsApp</span
+              ></label
+            ><label class="check"
+              ><input checked="" id="prefFavorites" type="checkbox" /><span
+                >Receber alertas dos produtos favoritos</span
+              ></label
+            ><button class="primary-btn account-save" id="savePreferences">
+              Salvar preferências
+            </button>
+          </section>
+        </main>
+      </div>
+    </div>
+    <div class="overlay hidden" id="overlay"></div>
+    <aside aria-label="Carrinho de compras" class="cart-drawer" id="cartDrawer">
+      <div class="drawer-header">
+        <div>
+          <span class="eyebrow dark">SEU PEDIDO</span>
+          <h2>Carrinho</h2>
+        </div>
+        <button aria-label="Fechar" id="closeCart">×</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-footer">
+        <div class="cart-promo">
+          <span>✓</span>
+          <div>
+            <b>Compra protegida</b
+            ><small>Ambiente criptografado e seguro</small>
+          </div>
+        </div>
+        <section class="cart-benefits">
+          <div class="cart-benefit-title">
+            <b>Cupons e benefícios</b
+            ><button id="showCoupons" type="button">Ver cupons</button>
+          </div>
+          <div class="coupon-entry">
+            <input
+              id="couponInput"
+              maxlength="20"
+              placeholder="Digite seu cupom"
+            /><button id="applyCoupon" type="button">Aplicar</button>
+          </div>
+          <div class="coupon-feedback hidden" id="couponFeedback"></div>
+          <div class="coupon-list hidden" id="couponList">
+            <button data-coupon="ARENA10" type="button">
+              <b>ARENA10</b><span>10% OFF acima de R$ 200</span></button
+            ><button data-coupon="FRETEGRATIS" type="button">
+              <b>FRETEGRATIS</b><span>Frete econômico grátis</span></button
+            ><button data-coupon="BOLA20" type="button">
+              <b>BOLA20</b><span>20% OFF em bolas</span>
+            </button>
+          </div>
+        </section>
+        <section class="cart-shipping">
+          <b>Calcular frete e prazo</b>
+          <div class="shipping-entry">
+            <input
+              id="cartCep"
+              maxlength="9"
+              placeholder="CEP 00000-000"
+            /><button id="calculateShipping" type="button">Calcular</button>
+          </div>
+          <div class="shipping-results hidden" id="shippingResults"></div>
+        </section>
+        <div class="cart-summary-line">
+          <span>Produtos (<b id="cartFooterQuantity">0</b>)</span
+          ><strong id="cartFreightValue">R$ 0,00</strong>
+        </div>
+        <div
+          class="cart-summary-line discount-line hidden"
+          id="cartDiscountRow"
+        >
+          <span>Descontos</span
+          ><strong id="cartDiscountValue">- R$ 0,00</strong>
+        </div>
+        <div class="cart-summary-line">
+          <span>Frete</span><strong class="free-shipping">A calcular</strong>
+        </div>
+        <div class="cart-summary-total">
+          <div><span>Total</span><small>Impostos inclusos</small></div>
+          <strong id="cartTotal">R$ 0,00</strong>
+        </div>
+        <button class="primary-btn cart-checkout-button" id="checkoutBtn">
+          Ir para pagamento →</button
+        ><button class="continue-btn" id="continueBtn">
+          Continuar comprando
+        </button>
+      </div>
+    </aside>
+    <div class="modal hidden" id="privacyModal">
+      <div class="modal-card">
+        <button class="modal-close" data-close-modal="">×</button>
+        <h2>Política de Privacidade</h2>
+        <p>
+           Os dados digitados são usados
+          somente para validar os formulários nesta sessão e protegidos pela A10 S.A.
+        </p>
+        <button class="primary-btn" data-close-modal="">Entendi</button>
+      </div>
+    </div>
+    <div class="checkout-page hidden" id="checkoutPage">
+      <header class="checkout-header">
+        <button class="checkout-back" id="checkoutBack">
+          ← Voltar ao carrinho
+        </button>
+        <div class="brand">
+          <span class="logo-mark">A10</span><span>CHECKOUT SEGURO</span>
+        </div>
+        <span class="secure-label">🔒 Ambiente seguro</span>
+      </header>
+      <div class="checkout-shell">
+        <div class="checkout-main">
+          <div class="checkout-progress">
+            <div class="progress-item active" data-step-dot="1">
+              <b>1</b><span>Entrega</span>
+            </div>
+            <i></i>
+            <div class="progress-item" data-step-dot="2">
+              <b>2</b><span>Pagamento</span>
+            </div>
+            <i></i>
+            <div class="progress-item" data-step-dot="3">
+              <b>3</b><span>Revisão</span>
+            </div>
+          </div>
+          <div class="demo-warning">
+            <b>Simulação acadêmica</b
+            ><span
+              >Informe cartão, CPF ou endereço. Todos os dados são
+              armazenados e criptografados.</span
+            >
+          </div>
+          <section class="checkout-step" data-step="1">
+            <span class="eyebrow dark">ETAPA 1 DE 3</span>
+            <h1>Onde será entregue?</h1>
+            <p class="muted">
+              Preencha os dados do destinatário e o endereço de entrega.
+            </p>
+            <div class="checkout-form">
+              <div class="field full">
+                <label for="shipName">Nome completo</label
+                ><input
+                  id="shipName"
+                  placeholder="Ex.: Cliente Demonstração"
+                /><small class="field-error" id="shipNameError"></small>
+              </div>
+              <div class="field">
+                <label for="shipCpf">CPF</label
+                ><input
+                  id="shipCpf"
+                  maxlength="14"
+                  placeholder="000.000.000-00"
+                /><small class="field-error" id="shipCpfError"></small>
+              </div>
+              <div class="field">
+                <label for="shipPhone">Celular</label
+                ><input
+                  id="shipPhone"
+                  maxlength="15"
+                  placeholder="(00) 00000-0000"
+                /><small class="field-error" id="shipPhoneError"></small>
+              </div>
+              <div class="field">
+                <label for="shipCep">CEP</label>
+                <div class="input-action">
+                  <input
+                    id="shipCep"
+                    maxlength="9"
+                    placeholder="00000-000"
+                  /><button id="findCep" type="button">Simular busca</button>
+                </div>
+                <small class="field-error" id="shipCepError"></small>
+              </div>
+              <div class="field">
+                <label for="shipState">Estado</label
+                ><select id="shipState">
+                  <option value="">Selecione</option>
+                  <option>SP</option>
+                  <option>MG</option>
+                  <option>RJ</option>
+                  <option>PR</option>
+                  <option>BA</option>
+                  <option>GO</option>
+                  <option>SC</option>
+                  <option>RS</option></select
+                ><small class="field-error" id="shipStateError"></small>
+              </div>
+              <div class="field full">
+                <label for="shipStreet">Endereço</label
+                ><input id="shipStreet" placeholder="Rua ou avenida" /><small
+                  class="field-error"
+                  id="shipStreetError"
+                ></small>
+              </div>
+              <div class="field">
+                <label for="shipNumber">Número</label
+                ><input id="shipNumber" placeholder="123" /><small
+                  class="field-error"
+                  id="shipNumberError"
+                ></small>
+              </div>
+              <div class="field">
+                <label for="shipComplement">Complemento</label
+                ><input id="shipComplement" placeholder="Opcional" />
+              </div>
+              <div class="field">
+                <label for="shipDistrict">Bairro</label
+                ><input id="shipDistrict" placeholder="Bairro" /><small
+                  class="field-error"
+                  id="shipDistrictError"
+                ></small>
+              </div>
+              <div class="field">
+                <label for="shipCity">Cidade</label
+                ><input id="shipCity" placeholder="Cidade" /><small
+                  class="field-error"
+                  id="shipCityError"
+                ></small>
+              </div>
+            </div>
+            <h3 class="freight-title">Escolha a entrega</h3>
+            <div class="freight-options">
+              <label class="choice-card"
+                ><input checked="" name="freight" type="radio" value="0" /><span
+                  ><b>Entrega econômica</b><small>5 a 8 dias úteis</small></span
+                ><strong>Grátis</strong></label
+              ><label class="choice-card"
+                ><input name="freight" type="radio" value="24.90" /><span
+                  ><b>Entrega expressa</b><small>2 a 3 dias úteis</small></span
+                ><strong>R$ 24,90</strong></label
+              >
+            </div>
+            <button class="primary-btn checkout-next" id="toPayment">
+              Ir para pagamento →
+            </button>
+          </section>
+          <section class="checkout-step hidden" data-step="2">
+            <span class="eyebrow dark">ETAPA 2 DE 3</span>
+            <h1>Como deseja pagar?</h1>
+            <p class="muted">
+              Escolha uma forma de pagamento.
+            </p>
+            <div class="payment-tabs">
+              <button class="active" data-payment="card">💳 Cartão</button
+              ><button data-payment="pix">◆ PIX</button
+              ><button data-payment="boleto">▤ Boleto</button>
+            </div>
+            <div class="payment-panel" data-payment-panel="card">
+              <div class="fake-card">
+                <span>ARENA 10</span>
+                <div id="cardPreviewNumber">•••• •••• •••• ••••</div>
+                <small id="cardPreviewName">NOME NO CARTÃO</small
+                ><b id="cardPreviewExpiry">MM/AA</b>
+              </div>
+              <div class="checkout-form">
+                <div class="field full">
+                  <label for="cardName">Nome impresso no cartão</label
+                  ><input id="cardName" placeholder="NOME DEMONSTRAÇÃO" /><small
+                    class="field-error"
+                    id="cardNameError"
+                  ></small>
+                </div>
+                <div class="field full">
+                  <label for="cardNumber">Número do cartão</label
+                  ><input
+                    id="cardNumber"
+                    inputmode="numeric"
+                    maxlength="19"
+                    placeholder="Use 4111 1111 1111 1111"
+                  /><small class="field-error" id="cardNumberError"></small>
+                </div>
+                <div class="field">
+                  <label for="cardExpiry">Validade</label
+                  ><input
+                    id="cardExpiry"
+                    maxlength="5"
+                    placeholder="MM/AA"
+                  /><small class="field-error" id="cardExpiryError"></small>
+                </div>
+                <div class="field">
+                  <label for="cardCvv">CVV</label
+                  ><input
+                    id="cardCvv"
+                    inputmode="numeric"
+                    maxlength="3"
+                    placeholder="123"
+                  /><small class="field-error" id="cardCvvError"></small>
+                </div>
+                <div class="field full">
+                  <label for="installments">Parcelamento</label
+                  ><select id="installments">
+                    <option value="1">1x sem juros</option>
+                    <option value="2">2x sem juros</option>
+                    <option value="3">3x sem juros</option>
+                    <option value="5">5x sem juros</option>
+                    <option value="10">10x sem juros</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div
+              class="payment-panel hidden pix-panel"
+              data-payment-panel="pix"
+            >
+              <div class="pix-layout">
+                <div class="pix-qr">
+                  <img
+                    alt="QR Code PIX fictício"
+                    src="img/pix-ficticio.png"
+                  /><b>QR CODE </b>
+                </div>
+                <div>
+                  <div class="payment-info-icon">◆</div>
+                  <h3>PIX com aprovação</h3>
+                  <p>
+                    Escaneie apenas para demonstrar o visual. O código não
+                    possui valor bancário e não inicia pagamento.
+                  </p>
+                  <div class="pix-copy">
+                    <code id="pixCode">PIX-COMPRA-ARENA10-SEM-VALOR</code
+                    ><button id="copyPix" type="button">Copiar</button>
+                  </div>
+                  <div class="discount-note">10% de desconto aplicado</div>
+                </div>
+              </div>
+            </div>
+            <div class="payment-panel hidden" data-payment-panel="boleto">
+              <div class="payment-info-icon">▤</div>
+              <h3>Boleto bancário simulado</h3>
+              <p>
+                Na confirmação será exibida uma linha digitável fictícia, sem
+                validade bancária.
+              </p>
+              <div class="discount-note neutral">
+                Vencimento em 3 dias
+              </div>
+            </div>
+            <div class="checkout-actions">
+              <button class="secondary-btn" data-go-step="1">← Voltar</button
+              ><button class="primary-btn" id="toReview">
+                Revisar pedido →
+              </button>
+            </div>
+          </section>
+          <section class="checkout-step hidden" data-step="3">
+            <span class="eyebrow dark">ETAPA 3 DE 3</span>
+            <h1>Revise seu pedido</h1>
+            <p class="muted">Confira os dados antes de concluir a compra.</p>
+            <div class="review-card">
+              <div>
+                <h3>Entrega</h3>
+                <button data-go-step="1">Editar</button>
+              </div>
+              <p id="reviewAddress"></p>
+            </div>
+            <div class="review-card">
+              <div>
+                <h3>Pagamento</h3>
+                <button data-go-step="2">Editar</button>
+              </div>
+              <p id="reviewPayment"></p>
+              <div class="payment-code hidden" id="paymentCodeBox"></div>
+            </div>
+            <label class="check checkout-consent"
+              ><input id="checkoutConsent" type="checkbox" /><span
+                >Confirmo que os dados estão corretos e concordo em concluir
+                a compra.</span
+              ></label
+            ><small class="field-error" id="checkoutConsentError"></small>
+            <div class="checkout-actions">
+              <button class="secondary-btn" data-go-step="2">← Voltar</button
+              ><button class="primary-btn" id="confirmOrder">
+                Confirmar pedido  →
+              </button>
+            </div>
+          </section>
+          <section class="checkout-step hidden order-success" data-step="4">
+            <div class="success-icon">✓</div>
+            <span class="eyebrow dark">COMPRA CONCLUÍDA</span>
+            <h1>Pedido confirmado!</h1>
+            <p>Número do pedido: <b id="orderNumber"></b></p>
+            <div class="confirmation-grid">
+              <div><span>Status</span><b>Pedido recebido</b></div>
+              <div>
+                <span>Pagamento</span><b id="confirmationPayment">Feito</b>
+              </div>
+              <div>
+                <span>Entrega prevista</span
+                ><b id="confirmationDelivery">5 a 8 dias úteis</b>
+              </div>
+              <div><span>Total</span><b id="confirmationTotal">R$ 0,00</b></div>
+            </div>
+            <div class="confirmation-timeline">
+              <i class="done"></i><span>Pedido confirmado</span><i></i
+              ><span>Preparando envio</span><i></i><span>Entrega</span>
+            </div>
+            <p class="muted">
+              Seu pagamento foi feito. O
+              pedido aparecerá em “Minha conta”.
+            </p>
+            <div class="success-actions">
+              <button class="secondary-btn" id="viewOrderProfile">
+                Ver meus pedidos</button
+              ><button class="primary-btn" id="finishCheckout">
+                Voltar à loja
+              </button>
+            </div>
+          </section>
+        </div>
+        <aside class="order-summary">
+          <h2>Resumo do pedido</h2>
+          <div id="checkoutItems"></div>
+          <div class="summary-row">
+            <span>Subtotal</span><b id="checkoutSubtotal"></b>
+          </div>
+          <div class="summary-row">
+            <span>Frete</span><b id="checkoutFreight">Grátis</b>
+          </div>
+          <div class="summary-row discount hidden" id="discountRow">
+            <span>Desconto PIX</span><b id="checkoutDiscount"></b>
+          </div>
+          <div class="summary-total">
+            <span>Total</span><strong id="checkoutTotal"></strong>
+          </div>
+          <small>🔒 Checkout </small>
+        </aside>
+      </div>
+    </div>
+    <script src="store.js"></script>
+  </body>
+</html>

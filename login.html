@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <title>Arena 10 | Login</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="auth-body">
+    <div class="auth-toast" id="authToast" role="alert">
+      <span id="authToastIcon">i</span>
+      <div>
+        <strong id="authToastTitle">Aviso</strong
+        ><small id="authToastText"></small>
+      </div>
+      <button type="button" id="authToastClose">×</button>
+    </div>
+    <main class="auth-layout">
+      <div class="auth-visual">
+        <div class="auth-brand">
+          <span class="logo-mark">A10</span><span>ARENA 10</span>
+        </div>
+        <div class="auth-copy">
+          <span class="eyebrow">VIVA O JOGO</span>
+          <h1>Seu futebol começa aqui.</h1>
+          <p>Chuteiras, camisas e equipamentos para quem joga com paixão.</p>
+          <div class="auth-benefits">
+            <span>✓ Frete grátis acima de R$ 299</span
+            ><span>✓ Troca fácil em até 30 dias</span
+            ><span>✓ Compra 100% segura</span>
+          </div>
+        </div>
+      </div>
+      <section class="auth-panel">
+        <div class="auth-box">
+          <span class="eyebrow dark">BEM-VINDO DE VOLTA</span>
+          <h2>Entre na sua conta</h2>
+          <p class="muted">
+            Acesse a loja usando um e-mail válido e senha com pelo menos 6
+            caracteres.
+          </p>
+          <form id="loginForm" novalidate>
+            <label for="loginEmail">E-mail</label
+            ><input
+              id="loginEmail"
+              type="email"
+              placeholder="seuemail@exemplo.com"
+            /><label for="loginPassword">Senha</label>
+            <div class="password-wrap">
+              <input
+                id="loginPassword"
+                type="password"
+                placeholder="Sua senha"
+              /><button
+                type="button"
+                class="show-password"
+                data-target="loginPassword"
+              >
+                Ver
+              </button>
+            </div>
+            <div class="auth-links">
+              <label class="check compact"
+                ><input type="checkbox" /><span>Lembrar de mim</span></label
+              ><a href="recuperar-senha.html">Esqueci minha senha</a>
+            </div>
+            <button class="primary-btn" type="submit">Entrar na loja →</button>
+          </form>
+          <p class="auth-switch">
+            Ainda não possui conta?
+            <a class="link-button strong auth-page-link" href="cadastro.html"
+              >Cadastre-se gratuitamente</a
+            >
+          </p>
+        </div>
+      </section>
+    </main>
+    <script src="auth.js"></script>
+  </body>
+</html>

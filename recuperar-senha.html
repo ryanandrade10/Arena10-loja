@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <title>Arena 10 | Recuperar senha</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="auth-body">
+    <div class="auth-toast" id="authToast" role="alert">
+      <span id="authToastIcon">i</span>
+      <div>
+        <strong id="authToastTitle">Aviso</strong
+        ><small id="authToastText"></small>
+      </div>
+      <button type="button" id="authToastClose">×</button>
+    </div>
+    <main class="auth-layout">
+      <div class="auth-visual">
+        <div class="auth-brand">
+          <span class="logo-mark">A10</span><span>ARENA 10</span>
+        </div>
+        <div class="auth-copy">
+          <span class="eyebrow">VIVA O JOGO</span>
+          <h1>Seu futebol começa aqui.</h1>
+          <p>Chuteiras, camisas e equipamentos para quem joga com paixão.</p>
+          <div class="auth-benefits">
+            <span>✓ Frete grátis acima de R$ 299</span
+            ><span>✓ Troca fácil em até 30 dias</span
+            ><span>✓ Compra 100% segura</span>
+          </div>
+        </div>
+      </div>
+      <section class="auth-panel">
+        <div class="auth-box">
+          <a class="back-btn" href="login.html">← Voltar ao login</a>
+          <div class="recovery-steps">
+            <b class="active" data-dot="1">1</b><i></i><b data-dot="2">2</b
+            ><i></i><b data-dot="3">3</b>
+          </div>
+          <section data-step="1">
+            <span class="eyebrow dark">RECUPERAR ACESSO</span>
+            <h2>Esqueceu sua senha?</h2>
+            <p class="muted">Digite o e-mail utilizado no cadastro.</p>
+            <form id="recoveryEmailForm">
+              <label for="recoveryEmail">E-mail</label
+              ><input
+                id="recoveryEmail"
+                type="email"
+                placeholder="seuemail@exemplo.com"
+              /><button class="primary-btn" type="submit">
+                Enviar código →
+              </button>
+            </form>
+          </section>
+          <section class="hidden" data-step="2">
+            <span class="eyebrow dark">E-MAIL ENVIADO</span>
+            <h2>Confira seu e-mail</h2>
+            <p class="muted">
+              Enviamos um código para
+              <span class="sent-email" id="sentEmail"></span>.
+            </p>
+            <div class="auth-note">Use o código enviado no email <b>123456</b>.</div>
+            <form id="recoveryCodeForm">
+              <label for="recoveryCode">Código</label
+              ><input
+                id="recoveryCode"
+                class="auth-code"
+                maxlength="6"
+                placeholder="000000"
+              /><button class="primary-btn" type="submit">
+                Validar código →
+              </button>
+            </form>
+          </section>
+          <section class="hidden" data-step="3">
+            <span class="eyebrow dark">NOVA SENHA</span>
+            <h2>Defina uma nova senha</h2>
+            <form id="newPasswordForm">
+              <label for="newPassword">Nova senha</label
+              ><input
+                id="newPassword"
+                type="password"
+                placeholder="Arena@2026"
+              /><label for="confirmPassword">Confirmar senha</label
+              ><input
+                id="confirmPassword"
+                type="password"
+                placeholder="Repita a senha"
+              /><button class="primary-btn" type="submit">
+                Alterar senha ✓
+              </button>
+            </form>
+          </section>
+          <section class="hidden auth-success" data-step="4">
+            <div class="success-icon">✓</div>
+            <h2>Senha alterada!</h2>
+            <p class="muted">A alteração feita, seguir com login.</p>
+            <a class="primary-btn auth-page-link" href="login.html"
+              >Voltar ao login</a
+            >
+          </section>
+        </div>
+      </section>
+    </main>
+    <script src="auth.js"></script>
+  </body>
+</html>
